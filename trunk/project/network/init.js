@@ -49,7 +49,7 @@ var netPlayer_avatar = new Array();
 
 						// OnOpen callback
 						OnOpen: function( aEvent ) {
-							log( "<font style='color:#888'>jWebSocket connection established.</font>" );
+							log( "jWebSocket connection established." );
 							jws.$("simgStatus").src = "images/yes.png";
 							console.log("You are connected");
 						},
@@ -104,9 +104,18 @@ var netPlayer_avatar = new Array();
 					if (aToken.map.avatar === "undefined"){ }else{
 					try{
 					netPlayer_avatar.push(aToken.map.avatar[0]);
-					getE("netAvatarIMG").src = aToken.map.avatar[0].toString();
+                    
+					var hand_https = "OK";
+					hand_https = aToken.map.avatar[0].toString();
+					console.log(hand_https);
+					var hand_http=hand_https.replace("https","http");
+					console.log(hand_http);
+					getE("netAvatarIMG").src = hand_http;
+					
 					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
-					}catch(e){console.log("NEBI TREBALO DA SE DESI");}
+					//ori//CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
+					
+					}catch(e){console.log(e + "NEBI TREBALO DA SE DESI");}
 					 }
 					 
 					
@@ -129,7 +138,7 @@ var netPlayer_avatar = new Array();
 					 netPlayer_avatar.splice(Net_id.indexOf(aToken.publisher),1,  aToken.map.avatar[0]);
 					 getE("netAvatarIMG").src = aToken.map.avatar[0].toString();
 					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
-					
+					console.log("USO U REPLACE ZA AVATARA");
 					} catch(e){console.log("GRESKA2");}
 					}
 					 
