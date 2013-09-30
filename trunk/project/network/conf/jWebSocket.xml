@@ -109,6 +109,7 @@
 				<domain>http*://192.168.*</domain>
 				<domain>http*://localhost*</domain>
 				<domain>http*://doctor.html-5.me/*</domain>
+				<domain>http*://*</domain>
 			</domains>
 			<!-- default session timeout 1h, max timeout currently 1 hour -->
 			<timeout>0</timeout>
@@ -161,6 +162,8 @@
 				<domain>http*://10.21.*</domain>
 				<domain>http*://192.168.*</domain>
 				<domain>http*://localhost*</domain>
+				<domain>http*://doctor.html-5.me/*</domain>
+				<domain>http*://*</domain>
 			</domains>
 			<!-- default session timeout 1h, max timeout currently 1 hour -->
 			<timeout>0</timeout>
@@ -268,6 +271,8 @@
 				<domain>http*://10.21.*</domain>
 				<domain>http*://192.168.*</domain>
 				<domain>http*://localhost*</domain>
+				<domain>http*://doctor.html-5.me/*</domain>
+				<domain>http*://*</domain>
 			</domains>
 			<!-- default session timeout 1h, max timeout currently 1 hour -->
 			<timeout>0</timeout>
@@ -330,6 +335,8 @@
 				<domain>http*://www.jwebsocket.org</domain>
 				<domain>http*://www.jwebsocket.com</domain>
 				<domain>http*://localhost*</domain>
+				<domain>http*://doctor.html-5.me/*</domain>
+				<domain>http*://*</domain>
 			</domains>
 			<!-- default session timeout 1h, max timeout currently 1 hour -->
 			<timeout>0</timeout>

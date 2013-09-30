@@ -202,8 +202,6 @@ function GETSERVERINFO(url) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		   window["server_text"] = xmlhttp.responseText;
 	       window["SERVER"]  = eval('(' + server_text + ')');
-	
-	
         }
     }
 
@@ -211,3 +209,72 @@ function GETSERVERINFO(url) {
     xmlhttp.send();
 }
 
+
+function getBase64Image(img) {
+    // Create an empty canvas element
+    var canvas = document.createElement("canvas2d");
+    canvas.width = 128;
+    canvas.height = 128;
+    img.height = canvas.height;
+	img.width = canvas.width;
+	
+    // Copy the image contents to the canvas
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    // Get the data-URL formatted image
+    // Firefox supports PNG and JPEG. You could check img.src to
+    // guess the original format, but be aware the using "image/jpg"
+    // will re-encode the image.
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+function getBase64FromImageUrl(URL) {
+    var img = new Image();
+    img.src = URL;
+    img.onload = function () {
+
+
+    var canvas = document.createElement("canvas");
+    canvas.width =this.width;
+    canvas.height =this.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(this, 0, 0);
+
+
+    var dataURL = canvas.toDataURL("image/jpg");
+	dataURL = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+   return dataURL;
+  
+
+    }
+}
+
+ 
+	  
+function toggleFullScreen() {
+  if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
+}
+
+
+ 

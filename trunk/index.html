@@ -17,7 +17,7 @@
 		****************************************************/
 		</script>
 	</head>
-	<body style="margin:0;padding:0;overflow: hidden;">
+	<body style="margin:0;padding:0;">
 		<div id="info" style="position:absolute;right:20px;bottom:50px;">
 		<!-- Place this tag where you want the widget to render. -->
 		<div class="g-page" data-width="180" data-href="//plus.google.com/104995352364512450253" data-rel="publisher"></div>
@@ -32,16 +32,23 @@
 		</script>
 		
 		</div>
-		
-	
-	
+	<div style="position:absolute;right:5px;top:10px;" ><img style="width:200px;height:70px;" src="images/nikola_lukic.png" /></div>
 <div id="example1" style="font-size:25px;color:lime;
     text-shadow: rgba(10,255,255,0.8) 1px 4px 4px;" >Welcome here people, i have something to share!</div>
-<p id="example2" style="font-size:21px;position:absolute;left:0;top:20;height:90%;overflow:auto;opacity:1;color:lime; text-shadow: rgba(10,255,111,0.8) 1px 4px 4px;" >FastMatrix created by <b>zlatnaspirala2</b> javascript framework.<br /><b>Implemented</b> First person camera controler, <br>multiplayer mode<br/>
+<p id="example2" style="font-size:21px;position:absolute;left:0;top:20;height:100%;overflow:visible;opacity:1;color:lime; text-shadow: rgba(10,255,111,0.8) 1px 4px 4px;" >FastMatrix created by <b>zlatnaspirala2</b> javascript framework.<br /><b>Implemented</b> First person camera controler, <br>multiplayer mode<br/>
 realtime public chat<br/>
 <b>For now , support for:</b><br/>
 FireFox desktop, Chrome desktop, Opera desktop<br/>
 FireFox mobile bowser for modern android devices!<br/>
+Credits :<br/>
+Textures : <a href="www.spiralgraphics.biz/">www.spiralgraphics.biz</a><br/>
+Homepage webgl from  : <a href="http://www.mrdoob.com/">http://www.mrdoob.com/</a><br/>
+Inspiration  : <a href="learningwebgl.com/‎">learningwebgl.com/‎</a><br/>
+Networking  : <a href="jwebsocket.org‎">jwebsocket.org‎</a><br/>
+Next post zlatnaspirala2 GUI application for windows.<br/>
+About game<br/>
+You will need google+ profile picture<br/>
+Meet people around...<br/>
 Thanks for visit !!!<br/>
 </p>
 	<div id="container" style="position:absolute;left:1px;top:1px;opacity:0.3"></div>
@@ -82,7 +89,7 @@ TypingText.runAll();
 
 
 			 } else {
-			var QUALITY = 11,
+			var QUALITY = 12,
 			WIDTH = Math.floor(window.innerWidth / QUALITY), HEIGHT = Math.floor(window.innerHeight / QUALITY), SIZE = WIDTH * HEIGHT,
 			
 			context, image, data,
@@ -146,7 +153,7 @@ TypingText.runAll();
 
 			function onDocumentMouseDown(event) {
 			
-				event.preventDefault();
+				//event.preventDefault();
 				
 				isUserInteracting = true;
 				
@@ -188,7 +195,7 @@ TypingText.runAll();
  
 			function onDocumentTouchMove(event) {
 			
-				event.preventDefault();
+				//event.preventDefault();
 
 				pointers = [];
 				
