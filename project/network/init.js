@@ -110,7 +110,14 @@ var netPlayer_avatar = new Array();
 					console.log(hand_https);
 					var hand_http=hand_https.replace("https","http");
 					console.log(hand_http);
-					getE("netAvatarIMG").src = hand_http;
+					
+					 
+					//getE("netAvatarIMG").src = hand_http;
+					//var IMG_BASE62 = getE("netAvatarIMG").src;
+					
+					//getE("netAvatarIMG").src = getBase64FromImageUrl(IMG_BASE62);
+					getE("netAvatarIMG").src = uInfo.image.url;
+					
 					
 					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
 					//ori//CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
