@@ -111,16 +111,39 @@ var netPlayer_avatar = new Array();
 					var hand_http=hand_https.replace("https","http");
 					console.log(hand_http);
 					
-					 
+				 
 					//getE("netAvatarIMG").src = hand_http;
 					//var IMG_BASE62 = getE("netAvatarIMG").src;
-					
+
+					var img = new Image,
+					canvas = document.createElement("canvas"),
+					ctx = canvas.getContext("2d"),
+					src = hand_http; // insert image url here
+
+					img.crossOrigin = "anonymous";
+
+					img.onload = function() {
+					canvas.width = img.width;
+					canvas.height = img.height;
+					ctx.drawImage( img, 0, 0 );
+					localStorage.setItem( "PROFILE_AVATAR", canvas.toDataURL("image/png") );
+					}
+					img.src = src;
+					// make sure the load event fires for cached images too
+					if ( img.complete || img.complete === undefined ) {
+					img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+					img.src = src;
+					}
+										
 					//getE("netAvatarIMG").src = getBase64FromImageUrl(IMG_BASE62);
-					getE("netAvatarIMG").src = uInfo.image.url;
+					//getE("netAvatarIMG").src = uInfo.image.url;
 					
 					
-					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
-					//ori//CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), getE("netAvatarIMG").src );
+					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), img.src );
+					
+					
+					
+					
 					
 					}catch(e){console.log(e + "NEBI TREBALO DA SE DESI");}
 					 }
