@@ -14,7 +14,9 @@ New api:
 NEW_CUBE(ID,TXL,TYL,TZL,pointToTexture,scaleX,scaleY,scaleZ,Blend,RotBy,Angle,RotateSpeed,coalizion_triger)
 
 NEW_CUBE("SWITCH1",-60,2,window['CKECK'],press,2,2,2,'NO','X',0,0,'trig');
+
 //blink light
+
 CREATE_LIGHT(PERIODAD,0.2,0.2,0,10,0,0.2,0,PERIODAD,false,true);
 
 //back to normal light
@@ -22,4 +24,3 @@ neutral();
 
 
 = Details =
-
