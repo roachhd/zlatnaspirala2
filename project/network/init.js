@@ -39,7 +39,10 @@ var netPlayer_avatar = new Array();
 			function login() {
 				// URL is ws[s]://[hostname|localhost]:8787[/context][/servlet/][;args...]
 				//var lURL = jws.getDefaultServerURL();
-                var lURL = "ws://" + SERVER[0].address + ":8787/jWebSocket/jWebSocket";
+                
+				var lURL = "ws://" + SERVER[0].address + ":8787/jWebSocket/jWebSocket";
+				//var lURL = "ws://188.226.129.11:8787/jWebSocket/jWebSocket";
+				
 				console.log("IP >>>>" + lURL);
 				//var lURL = "ws://192.168.1.10:8787/jWebSocket/jWebSocket";
 				
@@ -139,9 +142,9 @@ var netPlayer_avatar = new Array();
 					//getE("netAvatarIMG").src = uInfo.image.url;
 					
 					
-					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), img.src );
+					//CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), img.src );
 					
-					
+					CREATE_TEXTURE("T" + Net_id.indexOf(aToken.publisher).toString(), localStorage.getItem( "PROFILE_AVATAR") );
 					
 					
 					
