@@ -112,7 +112,7 @@ var netPlayer_avatar = new Array();
 					hand_https = aToken.map.avatar[0].toString();
 					console.log(hand_https);
 					var hand_http=hand_https.replace("https","http");
-					console.log(hand_http);
+					console.log(hand_http + "from google+");
 					
 				 
 					//getE("netAvatarIMG").src = hand_http;
@@ -122,8 +122,8 @@ var netPlayer_avatar = new Array();
 					canvas = document.createElement("canvas"),
 					ctx = canvas.getContext("2d"),
 					src = hand_http; // insert image url here
-
-					img.crossOrigin = "anonymous";
+                    //alert(hand_http);
+					img.crossOrigin = "Anonymous";
 
 					img.onload = function() {
 					canvas.width = img.width;
@@ -440,7 +440,7 @@ var netPlayer_avatar = new Array();
 					//jws.$( "schkKeepAlive" ).setAttribute( "disabled", "disabled" );
 
 					var lMsg = jws.MSG_WS_NOT_SUPPORTED;
-					alert( lMsg );
+					//alert( lMsg );
 					log( lMsg );
 				}
 			}
