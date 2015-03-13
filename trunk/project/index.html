@@ -422,7 +422,7 @@ var lastMove="none";
 			transZ =  transZ - DOPX; 
 			transX = transX + DOPY; publish();} 
 			if(key == "32")
-			alert("SPACE!");
+			//alert("SPACE!");
 			if(key == "17")
 			pucanj=1;//LEFTCONTROL  
 			if(key == "81")
@@ -474,7 +474,7 @@ var lastMove="none";
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
      })();
     </script>
-	<span id="signinButton" style="display:block;position:absolute;left:0;top:0;width:100%;height:100%;z-index:13;border:solid lime;background:black;margin:0 auto;text-align:center;" >
+	<span id="signinButton" style="display:block;position:absolute;left:0;top:0;width:7%;height:5%;z-index:13;border:solid lime;background:black;margin:0 auto;text-align:center;" >
 	<div style="margin-top:100px;">
   <span
     id="LOG"
@@ -550,15 +550,21 @@ var IMG;
 	 GETID("https://www.googleapis.com/oauth2/v1/userinfo?access_token="+PRVI.access_token);
 	 
 	 setTimeout(function(){
-	 IMG = "https://www.google.com/s2/photos/profile/"+ IDUSER_.id.toString();
-	 getE("PRO").src = IMG;
+	 
 	 
 	 GETUSERINFO("https://www.googleapis.com/plus/v1/people/"+IDUSER_.id.toString() + "?key=AIzaSyBeFcucriTGKxiFgvGUK4SxnYhAwFFUeUs");
 	 
 	 var test = setTimeout(function(){
-	 //alert(uInfo);
+	 
+	 //IMG = "https://www.google.com/s2/photos/profile/"+ IDUSER_.id.toString();
+	 IMG = uInfo.image.url;
+	 
+	 getE("PRO").src = IMG;
+	 
 	 getE("DATA_DIV").innerHTML = "Welcome " + uInfo.displayName;
-	 },1200);
+	 
+	 
+	 },4200);
 	 
 	 },1000);
 	 
