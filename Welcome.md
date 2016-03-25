@@ -1,0 +1,24 @@
+# Introduction #
+
+Old api you can use:
+in **draw.js**
+
+BLOCK(0,0,90,floor);
+XWALL(0,0.7,-15.7,barrier);
+
+New api:
+
+//draw cube
+NEW\_CUBE(ID,TXL,TYL,TZL,pointToTexture,scaleX,scaleY,scaleZ,Blend,RotBy,Angle,RotateSpeed,coalizion\_triger)
+
+NEW\_CUBE("SWITCH1",-60,2,window['CKECK'],press,2,2,2,'NO','X',0,0,'trig');
+
+//blink light
+
+CREATE\_LIGHT(PERIODAD,0.2,0.2,0,10,0,0.2,0,PERIODAD,false,true);
+
+//back to normal light
+neutral();
+
+
+# Details #
